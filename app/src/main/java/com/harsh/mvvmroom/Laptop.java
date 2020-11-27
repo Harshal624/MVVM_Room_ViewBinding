@@ -1,11 +1,12 @@
 package com.harsh.mvvmroom;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "laptop_table")
-public class Laptops {
+public class Laptop {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -25,7 +26,7 @@ public class Laptops {
 
     private long cost;
 
-    public Laptops(String laptop_name, String laptop_description, int ram, int storage, int gpu, long cost) {
+    public Laptop(String laptop_name, String laptop_description, int ram, int storage, int gpu, long cost) {
         this.laptop_name = laptop_name;
         this.laptop_description = laptop_description;
         this.ram = ram;
@@ -65,5 +66,19 @@ public class Laptops {
 
     public long getCost() {
         return cost;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        String laptop = "Name:" + getLaptop_name() + "\n" +
+                "Description:" + getLaptop_description() + "\n" +
+                "RAM:" + getRam() + "\n" +
+                "Storage:" + getStorage() + "\n" +
+                "GPU:" + getGpu() + "\n" +
+                "Cost:" + getCost() + "\n";
+
+        return laptop;
+
     }
 }
