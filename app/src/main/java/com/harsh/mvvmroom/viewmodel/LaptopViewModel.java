@@ -1,10 +1,13 @@
-package com.harsh.mvvmroom;
+package com.harsh.mvvmroom.viewmodel;
 
 import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+
+import com.harsh.mvvmroom.model.Laptop;
+import com.harsh.mvvmroom.repository.LaptopRepo;
 
 import java.util.List;
 

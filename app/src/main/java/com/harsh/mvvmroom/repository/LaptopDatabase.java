@@ -1,4 +1,4 @@
-package com.harsh.mvvmroom;
+package com.harsh.mvvmroom.repository;
 
 import android.content.Context;
 
@@ -7,6 +7,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.harsh.mvvmroom.model.Laptop;
 
 @Database(version = 1, entities = {Laptop.class})
 public abstract class LaptopDatabase extends RoomDatabase {
@@ -17,6 +19,7 @@ public abstract class LaptopDatabase extends RoomDatabase {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
             final LaptopDao dao = instance.laptopDao();
+
 
             new Thread(new Runnable() {
                 @Override

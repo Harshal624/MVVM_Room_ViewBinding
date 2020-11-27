@@ -1,6 +1,9 @@
-package com.harsh.mvvmroom;
+package com.harsh.mvvmroom.model;
+
+import android.annotation.SuppressLint;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -81,4 +84,19 @@ public class Laptop {
         return laptop;
 
     }
+
+    public static DiffUtil.ItemCallback<Laptop> itemCallback = new DiffUtil.ItemCallback<Laptop>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Laptop oldItem, @NonNull Laptop newItem) {
+            return (oldItem.laptop_name.equals(newItem.laptop_name) && oldItem.laptop_description.equals(
+                    newItem.laptop_description
+            ));
+        }
+
+        @SuppressLint("DiffUtilEquals")
+        @Override
+        public boolean areContentsTheSame(@NonNull Laptop oldItem, @NonNull Laptop newItem) {
+            return oldItem.equals(newItem);
+        }
+    };
 }

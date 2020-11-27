@@ -1,4 +1,4 @@
-package com.harsh.mvvmroom;
+package com.harsh.mvvmroom.repository;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,6 +6,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.harsh.mvvmroom.model.Laptop;
 
 import java.util.List;
 

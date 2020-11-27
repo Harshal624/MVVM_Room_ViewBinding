@@ -1,8 +1,10 @@
-package com.harsh.mvvmroom;
+package com.harsh.mvvmroom.repository;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
+
+import com.harsh.mvvmroom.model.Laptop;
 
 import java.util.List;
 
